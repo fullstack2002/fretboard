@@ -7,6 +7,16 @@
     <title>Fretboard</title>
 </head>
 <body>
+    <div class="settings">
+        <label for="instrument-selector">Selected instrument:</label>
+        <select name="instrument-selector" id="instrument-selector"></select>
+        <div class="accidental-selector">
+            <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
+            <label for="flats">♭</label>
+            <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps" checked>
+            <label for="sharps">♯</label>
+        </div>
+    </div>
     <div class="fretboard"></div>
     <script src="./app.js"></script>
 </body>
