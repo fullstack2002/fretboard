@@ -3,8 +3,9 @@ const root = document.documentElement;
 const fretboard = document.querySelector('.fretboard');
 const setupSelectedInstrumentsSelector = document.querySelector('#instrument-selector');
 const accidentalSelector = document.querySelector('.accidental-selector');
+const numberOfFretsSelector = document.querySelector('#number-of-frets');
 
-const numberOfFrets = 12;
+let numberOfFrets = 20;
 
 
 const singleFretMarkPositions = [3, 5, 7, 9, 15, 19, 21];
@@ -104,6 +105,10 @@ const app = {
                 return;
             }
         });
+        numberOfFretsSelector.addEventListener('change', () => {
+            numberOfFrets = numberOfFretsSelector.value;
+            this.setupFretboard();
+        })
     }
 }
 

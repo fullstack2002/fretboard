@@ -34,6 +34,14 @@ body {
     margin-left: 20px;
 }
 
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+label {
+    margin-right: 10px;
+}
+
 .fretboard {
     display: flex;
     flex-direction: column;
