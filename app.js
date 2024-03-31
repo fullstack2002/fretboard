@@ -28,6 +28,26 @@ const instrumentTuningPresets = {
     'Ukulele': [9, 4, 0, 7]
 };
 
+const noteColors = {
+    'A': '#f37226',
+    'B': '#fa0703',
+    'C': '#9322f7',
+    'D': '#1024f6',
+    'E': '#793b15',
+    'F': '#27b0c2',
+    'G': '#8cc831',
+    'Db': '#000000',
+    'Eb': '#000000',
+    'Gb': '#000000',
+    'Ab': '#000000',
+    'Bb': '#000000',
+    'C#': '#000000',
+    'D#': '#000000',
+    'F#': '#000000',
+    'G#': '#000000',
+    'A#': '#000000'
+};
+
 let selectedInstrument = 'Guitar';
 let numberOfStrings = instrumentTuningPresets[selectedInstrument].length;
 
@@ -41,7 +61,8 @@ const app = {
     },
     setupFretboard() {
         fretboard.innerHTML = '';
-        root.style.setProperty('--number-of-strings', numberOfStrings)
+        root.style.setProperty('--number-of-strings', numberOfStrings);
+        
         // adding strings to fretboard
         for (let i = 0; i < numberOfStrings; i++) {
             let string = tools.createElement('div');
@@ -56,6 +77,10 @@ const app = {
 
                 let noteName = this.generateNoteNames((fret + instrumentTuningPresets[selectedInstrument][i]), accidentals);
                 noteFret.setAttribute('data-note', noteName);
+
+                // set background color of note
+                noteFret.style.setProperty('--note-color', noteColors[noteName]);
+
 
                 // adding single fret marks
                 if (i === 0 && singleFretMarkPositions.indexOf(fret) !== -1) {
@@ -72,6 +97,7 @@ const app = {
         }
         allNotes = document.querySelectorAll('.note-fret');
     },
+
     generateNoteNames(noteIndex, accidentals) {
         noteIndex = noteIndex % 12;
         let noteName;

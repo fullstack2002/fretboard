@@ -96,7 +96,7 @@ label {
     border-radius: 50%;
     line-height: 33px;
     text-align: center;
-    background: teal;
+    background: var(--note-color);
     z-index: 2;
     color: #eee;
     opacity: var(--noteDotOpacity);
