@@ -16,17 +16,18 @@ let numberOfFrets = 20;
 const singleFretMarkPositions = [3, 5, 7, 9, 15, 19, 21];
 const doubleFretMarkPositions = [12, 24];
 
-const noteFlat = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
-const noteSharp = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+const noteFlat = ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"];
+const noteSharp = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
 
 let accidentals = 'flats';
 
 const instrumentTuningPresets = {
-    'Guitar': [4, 11, 7, 2, 9, 4],
-    'Bass (4 strings)': [7, 2, 9, 4],
-    'Bass (5 strings)': [7, 2, 9, 4, 11],
-    'Ukulele': [9, 4, 0, 7]
+    'Guitar': [7, 2, 10, 5, 0, 7],
+    'Bass (4 strings)': [10, 5, 0, 7],
+    'Bass (5 strings)': [10, 5, 0, 7, 2],
+    'Ukulele': [0, 7, 3, 10]
 };
+
 
 const noteColors = {
     'A': '#f37226',
